@@ -5,45 +5,38 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/loginemail1"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/loginpassword"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="password"
         android:inputType="textEmailAddress" />
+
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/signupButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="Login" />
+        android:text="Signup" />
 
     <TextView
-        android:id="@+id/textviewsingupcall"
+        android:id="@+id/textviewlogincall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New user?Signup" />
+        android:text="Already a user?Login" />
 
     <ProgressBar
-        android:id="@+id/progress_circular"
+        android:id="@+id/progress_circular1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:visibility="gone" />
-
-        android:text="send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/send"/>
 
 
 </LinearLayout>
