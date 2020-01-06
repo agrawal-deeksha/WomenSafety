@@ -31,11 +31,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editemail, editpassword;
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
-    String uri;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,10 +91,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG);
                 }
 
+            }
+        });
+
     }
 
-    @Override
 
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.textviewsingupcall:
@@ -105,4 +109,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
         }
+
+    }
+
 }
+
