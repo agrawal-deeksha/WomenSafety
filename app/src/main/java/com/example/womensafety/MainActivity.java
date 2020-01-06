@@ -31,18 +31,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editemail, editpassword;
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity implements LocationListener {
-
-
-    String uri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,40 +90,12 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 } else {
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG);
                 }
-
-
-        int hasSMSPermission = ContextCompat.checkSelfPermission(this,Manifest.permission.SEND_SMS );
-        int hasLocationPermission = ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION );
-        List<String> permissions = new ArrayList<String>();
-
-        if( hasSMSPermission != PackageManager.PERMISSION_GRANTED ) {
-            permissions.add( Manifest.permission.SEND_SMS );
-        }
-        if( hasLocationPermission != PackageManager.PERMISSION_GRANTED ) {
-            permissions.add( Manifest.permission.ACCESS_FINE_LOCATION );
-        }
-
-        if( !permissions.isEmpty() ) {
-            ActivityCompat.requestPermissions(this,permissions.toArray(new String[permissions.size()]), 1 );
-        }
-        Button send = findViewById(R.id.send);
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SmsManager sms =SmsManager.getDefault();
-                StringBuffer smsBody = new StringBuffer();
-                smsBody.append(Uri.parse(uri));
-                sms.sendTextMessage("+916264248434", null, smsBody.toString(), null, null);
-
             }
         });
-
     }
 
-    @Override
 
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.textviewsingupcall:
@@ -141,25 +107,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 break;
 
         }
-
-    public void onLocationChanged(Location location) {
-        uri = "http://maps.google.com/maps?saddr=" + location.getLatitude()+","+location.getLongitude();
-
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-
-
     }
 }
+
